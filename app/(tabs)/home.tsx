@@ -128,12 +128,22 @@ export default function HomeScreen() {
           </View>
           {/* Placeholder for transactions */}
           <Text style={{ color: subtextColor, fontSize: 13, marginBottom: 10 }}>No recent transactions</Text>
-          <TouchableOpacity style={{ alignSelf: 'flex-end', backgroundColor: refreshBtnBg, borderRadius: 24, paddingVertical: 8, paddingHorizontal: 18, flexDirection: 'row', alignItems: 'center', elevation: 2, shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 2 }}>
-            <Ionicons name="refresh" size={18} color={refreshBtnText} style={{ marginRight: 6 }} />
-            <Text style={{ color: refreshBtnText, fontWeight: 'bold' }}>Refresh</Text>
-          </TouchableOpacity>
         </View>
       </ScrollView>
+
+      {/* Fixed FloatingButtons Container */}
+      <View style={{ position: 'absolute', bottom: 20, right: 16, flexDirection: 'column', alignItems: 'flex-end', gap: 12, zIndex: 50 }}>
+        {/* WhatsApp Button */}
+        <TouchableOpacity style={{ width: 50, height: 50, backgroundColor: '#25D366', borderRadius: 28, alignItems: 'center', justifyContent: 'center', elevation: 5, shadowColor: '#000', shadowOpacity: 0.25, shadowRadius: 4, shadowOffset: { width: 0, height: 2 } }}>
+          <FontAwesome name="whatsapp" size={28} color="#fff" />
+        </TouchableOpacity>
+
+        {/* Refresh Button */}
+        <TouchableOpacity style={{ backgroundColor: refreshBtnBg, borderRadius: 24, paddingVertical: 8, paddingHorizontal: 18, flexDirection: 'row', alignItems: 'center', elevation: 2, shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 2 }}>
+          <Ionicons name="refresh" size={18} color={refreshBtnText} style={{ marginRight: 6 }} />
+          <Text style={{ color: refreshBtnText, fontWeight: 'bold' }}>Refresh</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
