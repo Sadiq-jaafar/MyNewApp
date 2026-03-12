@@ -10,6 +10,24 @@ export const unstable_settings = {
   anchor: '(tabs)',
 };
 
+const linking = {
+  prefixes: ['mynewapp://', 'https://mynewapp.com'],
+  config: {
+    screens: {
+      '(tabs)': {
+        screens: {
+          home: 'home',
+          transactions: 'transactions',
+          wallet: 'wallet',
+          profile: 'profile',
+        },
+      },
+      modal: 'modal',
+      NotFound: '*',
+    },
+  },
+};
+
 export default function RootLayout() {
   const colorScheme = useColorScheme();
 
