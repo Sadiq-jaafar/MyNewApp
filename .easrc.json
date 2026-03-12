@@ -1,0 +1,10 @@
+{
+  "cli": {
+    "version": ">= 5.0.0"
+  },
+  "build": {
+    "env": {
+      "EAS_BUILD_FROM_GITHUB": "true"
+    }
+  }
+}
