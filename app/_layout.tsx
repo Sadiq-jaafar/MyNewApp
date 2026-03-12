@@ -10,31 +10,13 @@ export const unstable_settings = {
   anchor: '(tabs)',
 };
 
-const linking = {
-  prefixes: ['mynewapp://', 'https://mynewapp.com'],
-  config: {
-    screens: {
-      '(tabs)': {
-        screens: {
-          home: 'home',
-          transactions: 'transactions',
-          wallet: 'wallet',
-          profile: 'profile',
-        },
-      },
-      modal: 'modal',
-      NotFound: '*',
-    },
-  },
-};
-
 export default function RootLayout() {
   const colorScheme = useColorScheme();
 
   return (
     <DarkModeProvider>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack linking={linking}>
+        <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
         </Stack>
